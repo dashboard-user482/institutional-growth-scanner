@@ -4816,19 +4816,19 @@ def texto_vwap(res):
 
 URL_CINTA_DIRECTO = os.environ.get(
     "URL_CINTA_DIRECTO",
-    "https://dashboard-user482.github.io/dashboard/cinta_bolsa.html"
+    "https://dashboard482.github.io/dashboard/cinta_bolsa.html"
 )
 URL_MUROS_DIRECTO = os.environ.get(
     "URL_MUROS_DIRECTO",
-    "https://dashboard-user482.github.io/dashboard/graficos_muros.html"
+    "https://dashboard482.github.io/dashboard/graficos_muros.html"
 )
 URL_CALOR_DIRECTO = os.environ.get(
     "URL_CALOR_DIRECTO",
-    "https://dashboard-user482.github.io/dashboard/graficos_calor.html"
+    "https://dashboard482.github.io/dashboard/graficos_calor.html"
 )
 URL_LIQUIDACIONES_DIRECTO = os.environ.get(
     "URL_LIQUIDACIONES_DIRECTO",
-    "https://dashboard-user482.github.io/dashboard/liquidaciones_directo.html"
+    "https://dashboard482.github.io/dashboard/liquidaciones_directo.html"
 )
 
 @bot.message_handler(commands=["directo"])
