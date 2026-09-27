@@ -1217,7 +1217,7 @@ def cmd_start(msg):
         "/liquidaciones [BTC|ETH|SOL|HYPE] — Mapa de liquidaciones estimado (sin moneda, BTC)\n"
         "/rsiminimos — Cripto y acciones cerca de su mínimo de RSI en 2 años\n"
         "/vwap TICKER — Precio medio ponderado por volumen de hoy, cripto o acción\n"
-        "/directo — Enlaces a las páginas en directo (cinta, muros, mapa de calor)\n\n"
+        "/directo — Enlaces a las páginas en directo (cinta, muros, mapa de calor, liquidaciones)\n\n"
         "/guia — Explicación completa de cada comando\n"
         "/dyor — Aviso legal (léelo antes de usar el bot para decidir)\n\n"
         "Además, cada 2h (9-21h) recibes un resumen automático de mercados y "
@@ -4816,15 +4816,19 @@ def texto_vwap(res):
 
 URL_CINTA_DIRECTO = os.environ.get(
     "URL_CINTA_DIRECTO",
-    "https://francescgonzalezarribas-pixel.github.io/dashboard/cinta_bolsa.html"
+    "https://dashboard-user482.github.io/dashboard/cinta_bolsa.html"
 )
 URL_MUROS_DIRECTO = os.environ.get(
     "URL_MUROS_DIRECTO",
-    "https://francescgonzalezarribas-pixel.github.io/dashboard/graficos_muros.html"
+    "https://dashboard-user482.github.io/dashboard/graficos_muros.html"
 )
 URL_CALOR_DIRECTO = os.environ.get(
     "URL_CALOR_DIRECTO",
-    "https://francescgonzalezarribas-pixel.github.io/dashboard/graficos_calor.html"
+    "https://dashboard-user482.github.io/dashboard/graficos_calor.html"
+)
+URL_LIQUIDACIONES_DIRECTO = os.environ.get(
+    "URL_LIQUIDACIONES_DIRECTO",
+    "https://dashboard-user482.github.io/dashboard/liquidaciones_directo.html"
 )
 
 @bot.message_handler(commands=["directo"])
@@ -4840,6 +4844,8 @@ def cmd_directo(msg):
         f"{URL_MUROS_DIRECTO}\n\n"
         "🔥 Velas + mapa de calor — lo mismo, pero con una franja de calor del libro de órdenes en vez de líneas:\n"
         f"{URL_CALOR_DIRECTO}\n\n"
+        "🩸 Liquidaciones estimadas — BTC, ETH, SOL y HYPE, con zoom y desplazamiento táctil, corto plazo y 24h:\n"
+        f"{URL_LIQUIDACIONES_DIRECTO}\n\n"
         "Son páginas aparte (no dentro de Telegram): tócalas para abrirlas en el navegador.")
 
 @bot.message_handler(commands=["vwap"])
@@ -5348,7 +5354,7 @@ MENU_COMANDOS = [
     ("vwap", "VWAP de hoy con bandas — cripto o acciones, TICKER opcional"),
     ("noticias", "Noticias de bolsa, economía y cripto"),
     ("ticker", "Resumen de mercados al momento"),
-    ("directo", "Enlaces a las 3 páginas en directo (cinta, muros, mapa de calor)"),
+    ("directo", "Enlaces a las 4 páginas en directo (cinta, muros, mapa de calor, liquidaciones)"),
 ]
 
 if __name__ == "__main__":
