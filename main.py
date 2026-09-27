@@ -4830,6 +4830,10 @@ URL_LIQUIDACIONES_DIRECTO = os.environ.get(
     "URL_LIQUIDACIONES_DIRECTO",
     "https://dashboard482.github.io/dashboard/liquidaciones_directo.html"
 )
+URL_BONOS_DIRECTO = os.environ.get(
+    "URL_BONOS_DIRECTO",
+    "https://dashboard482.github.io/dashboard/bono_30y.html"
+)
 
 @bot.message_handler(commands=["directo"])
 def cmd_directo(msg):
@@ -4846,6 +4850,8 @@ def cmd_directo(msg):
         f"{URL_CALOR_DIRECTO}\n\n"
         "🩸 Liquidaciones estimadas — BTC, ETH, SOL y HYPE, con zoom y desplazamiento táctil, corto plazo y 24h:\n"
         f"{URL_LIQUIDACIONES_DIRECTO}\n\n"
+        "📉 Bonos del Tesoro EEUU — rendimiento a 30, 10 y 2 años, gráfico oficial de la Reserva Federal (FRED):\n"
+        f"{URL_BONOS_DIRECTO}\n\n"
         "Son páginas aparte (no dentro de Telegram): tócalas para abrirlas en el navegador.")
 
 @bot.message_handler(commands=["vwap"])
